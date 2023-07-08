@@ -11,9 +11,11 @@
     "lint:fix": "eslint --fix ./src/**/*.{ts,tsx,js,jsx}"
   },
   "dependencies": {
+    "@toast-ui/react-editor": "^3.2.3",
     "dotenv": "^16.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

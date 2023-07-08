@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Layout from "./Layout";
+import Main from "./pages/Main";
+import { Route, Routes } from "react-router-dom";
+import Write from "./pages/Write";
+import NotFound from "./pages/NotFound";
 
 function App() {
   useEffect(() => {
@@ -14,12 +17,17 @@ function App() {
       );
       console.log(result.body.getReader().then((done, value) => value));
     }
-    fetchData();
+    // fetchData();
   }, []);
 
   return (
     <>
-      <p>테스트 페이지</p>
+      <Layout />
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/write" element={<Write />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
     </>
   );
 }
