@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Write from "./pages/Post/Write";
 import NotFound from "./pages/NotFound";
 import PostList from "./pages/Post/PostList";
+import List from "./pages/Chart/List";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Main />}></Route>
         <Route path="/post/list" element={<PostList />}></Route>
         <Route path="/post/write" element={<Write />}></Route>
+        <Route path="/chart/list" element={<List />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
