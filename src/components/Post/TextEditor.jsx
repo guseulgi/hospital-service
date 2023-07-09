@@ -4,11 +4,13 @@ import "@toast-ui/editor/dist/toastui-editor.css";
 
 export default function TextEditor() {
   const editRef = useRef();
+
   function submitPost() {
     console.log(editRef.current?.getInstance().getHTML());
     editRef.current?.getInstance().reset(""); // 텍스트 에디터를 리셋시킴
     editRef.current.getInstance().hide();
   }
+
   return (
     <>
       <Editor

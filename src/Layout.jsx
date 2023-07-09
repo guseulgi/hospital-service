@@ -5,7 +5,7 @@ export default function Layout() {
   return (
     <div>
       <Link to="/">Home</Link>
-      <Link to="/write">Write</Link>
+      <Link to="/post/list">Post</Link>
     </div>
   );
 }
