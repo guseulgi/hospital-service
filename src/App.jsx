@@ -4,8 +4,10 @@ import Main from "./pages/Main";
 import { Route, Routes } from "react-router-dom";
 import Write from "./pages/Post/Write";
 import NotFound from "./pages/NotFound";
-import PostList from "./pages/Post/PostList";
-import List from "./pages/Chart/List";
+import PostList from "./pages/Post/List";
+import ChartList from "./pages/Chart/List";
+import PostMain from "./pages/Post/index";
+import ChartMain from "./pages/Chart/index";
 
 function App() {
   useEffect(() => {
@@ -17,7 +19,7 @@ function App() {
           import.meta.env.VITE_API_KEY
         }&numOfRows=10&pageNo=1&apiType=JSON&year=2019&dvsd=경기`
       );
-      console.log(result.body.getReader().then((done, value) => value));
+      // console.log(result.body.getReader().then((done, value) => value));
     }
     // fetchData();
   }, []);
@@ -27,9 +29,14 @@ function App() {
       <Layout />
       <Routes>
         <Route path="/" element={<Main />}></Route>
-        <Route path="/post/list" element={<PostList />}></Route>
-        <Route path="/post/write" element={<Write />}></Route>
-        <Route path="/chart/list" element={<List />}></Route>
+        <Route path="/post" element={<PostMain />}>
+          <Route path="/post/list" element={<PostList />}></Route>
+          <Route path="/post/write" element={<Write />}></Route>
+        </Route>
+
+        <Route path="/chart" element={<ChartMain />}>
+          <Route path="/chart/list" element={<ChartList />}></Route>
+        </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>

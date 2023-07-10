@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
@@ -13,6 +13,7 @@ export default function Layout() {
       <Link to="chart/list" className="flex-1">
         Chart
       </Link>
+      <Outlet />
     </div>
   );
 }
