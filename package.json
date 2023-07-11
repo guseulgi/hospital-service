@@ -11,6 +11,8 @@
     "lint:fix": "eslint --fix ./src/**/*.{ts,tsx,js,jsx}"
   },
   "dependencies": {
+    "@toast-ui/chart": "^4.6.1",
+    "@toast-ui/react-chart": "^4.6.1",
     "@toast-ui/react-editor": "^3.2.3",
     "dotenv": "^16.3.1",
     "react": "^18.2.0",
