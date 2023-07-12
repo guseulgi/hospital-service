@@ -1,9 +1,6 @@
-import React, { useEffect, useRef } from "react";
-// import Chart from "@toast-ui/chart";
-// import { BarChart } from "@toast-ui/chart";
-// import "@toast-ui/chart/dist/toastui-chart.min.css";
+import React from "react";
 import "@toast-ui/chart/dist/toastui-chart.min.css";
-import { BarChart, LineChart } from "@toast-ui/react-chart";
+import { BarChart } from "@toast-ui/react-chart";
 
 export default function List() {
   const data = {
