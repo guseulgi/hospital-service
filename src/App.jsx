@@ -9,6 +9,7 @@ import ChartList from "./pages/Chart/List";
 import PostMain from "./pages/Post/index";
 import ChartMain from "./pages/Chart/index";
 import Pie from "./pages/Chart/Pie";
+import Line from "./pages/Chart/Line";
 
 function App() {
   useEffect(() => {
@@ -37,7 +38,8 @@ function App() {
 
         <Route path="/chart" element={<ChartMain />}>
           <Route path="/chart/list" element={<ChartList />}></Route>
-          <Route path="/chart/list2" element={<Pie />}></Route>
+          <Route path="/chart/list/pie" element={<Pie />}></Route>
+          <Route path="/chart/list/line" element={<Line />}></Route>
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
