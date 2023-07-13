@@ -8,8 +8,10 @@ import PostList from "./pages/Post/List";
 import ChartList from "./pages/Chart/List";
 import PostMain from "./pages/Post/index";
 import ChartMain from "./pages/Chart/index";
+import GridMain from "./pages/Grid/index";
 import Pie from "./pages/Chart/Pie";
 import Line from "./pages/Chart/Line";
+import DefaultGrid from "./pages/Grid/DefaultGrid";
 
 function App() {
   useEffect(() => {
@@ -31,6 +33,7 @@ function App() {
       <Layout />
       <Routes>
         <Route path="/" element={<Main />}></Route>
+
         <Route path="/post" element={<PostMain />}>
           <Route path="/post/list" element={<PostList />}></Route>
           <Route path="/post/write" element={<Write />}></Route>
@@ -41,6 +44,11 @@ function App() {
           <Route path="/chart/list/pie" element={<Pie />}></Route>
           <Route path="/chart/list/line" element={<Line />}></Route>
         </Route>
+
+        <Route path="/grid" element={<GridMain />}>
+          <Route path="/grid/default" element={<DefaultGrid />}></Route>
+        </Route>
+
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
