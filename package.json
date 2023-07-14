@@ -11,14 +11,16 @@
     "lint:fix": "eslint --fix ./src/**/*.{ts,tsx,js,jsx}"
   },
   "dependencies": {
+    "@inovua/reactdatagrid-community": "^5.10.1",
     "@toast-ui/chart": "^4.6.1",
     "@toast-ui/react-chart": "^4.6.1",
     "@toast-ui/react-editor": "^3.2.3",
-    "@toast-ui/react-grid": "^4.21.15",
+    "@toast-ui/react-grid": "^4.18.1",
     "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1"
+    "react-router-dom": "^6.14.1",
+    "recharts": "^2.7.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
