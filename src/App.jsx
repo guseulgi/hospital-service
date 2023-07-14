@@ -12,6 +12,7 @@ import GridMain from "./pages/Grid/index";
 import Pie from "./pages/Chart/Pie";
 import Line from "./pages/Chart/Line";
 import DefaultGrid from "./pages/Grid/DefaultGrid";
+import CustomLineChart from "./rechart/CustomLineChart";
 
 function App() {
   useEffect(() => {
@@ -41,8 +42,9 @@ function App() {
 
         <Route path="/chart" element={<ChartMain />}>
           <Route path="/chart/list" element={<ChartList />}></Route>
-          <Route path="/chart/list/pie" element={<Pie />}></Route>
-          <Route path="/chart/list/line" element={<Line />}></Route>
+          {/* <Route path="/chart/list/pie" element={<Pie />}></Route> */}
+          {/* <Route path="/chart/list/line" element={<Line />}></Route> */}
+          <Route path="/chart/list/line" element={<CustomLineChart />}></Route>
         </Route>
 
         <Route path="/grid" element={<GridMain />}>
