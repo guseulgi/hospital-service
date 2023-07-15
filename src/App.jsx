@@ -13,6 +13,7 @@ import Pie from "./pages/Chart/Pie";
 import Line from "./pages/Chart/Line";
 import DefaultGrid from "./pages/Grid/DefaultGrid";
 import CustomLineChart from "./rechart/CustomLineChart";
+import GridEx from "./reactdatagrid/GridEx";
 
 function App() {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
 
         <Route path="/grid" element={<GridMain />}>
           <Route path="/grid/default" element={<DefaultGrid />}></Route>
+          <Route path="/grid/reactdatagrid" element={<GridEx />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />}></Route>

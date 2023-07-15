@@ -1,6 +1,7 @@
 import React from "react";
 import "tui-grid/dist/tui-grid.css";
 import Grid from "@toast-ui/react-grid";
+import { Link } from "react-router-dom";
 
 const data = [
   { id: 1, name: "Editor" },
@@ -21,6 +22,7 @@ const columns = [
 export default function DefaultGrid() {
   return (
     <div>
+      <Link to="../reactdatagrid">예제</Link>
       <Grid
         data={data}
         columns={columns}
