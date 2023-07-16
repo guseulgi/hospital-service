@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDataGrid from "@inovua/reactdatagrid-community";
 import "@inovua/reactdatagrid-community/index.css";
+import "@inovua/reactdatagrid-community/theme/default-dark.css";
 
 const columns = [
   { name: "name", header: "Name", minWidth: 50, defaultFlex: 2 },
   { name: "age", header: "Age", maxWidth: 1000, defaultFlex: 1 },
 ];
 
-const gridStyle = { minHeight: 550 };
+const gridStyle = {
+  minHeight: 550,
+  border: "1px solid #7986cb",
+  boxShadow: "0 0 8px 2px rgba(121, 134,203, 0.5)",
+};
 
 const dataSource = [
   { id: 1, name: "John McQueen", age: 35 },
@@ -29,4 +34,6 @@ const dataSource = [
   { id: 17, name: "Johny Perterson", age: 40 },
 ];
 
-export default () => <ReactDataGrid idProperty="id" columns={columns} dataSource={dataSource} style={gridStyle} />;
+export default () => (
+  <ReactDataGrid idProperty="id" theme="default-dark" columns={columns} dataSource={dataSource} style={gridStyle} />
+);
