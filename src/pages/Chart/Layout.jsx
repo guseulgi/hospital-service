@@ -7,6 +7,7 @@ export default function Layout() {
       <Link to="./list/pie">Pie 차트</Link>
       <Link to="./list/line">Line 차트</Link>
       <Link to="./list/line2">Line 차트2</Link>
+      <Link to="./list/bar">Vertical Bar 차트</Link>
     </div>
   );
 }
