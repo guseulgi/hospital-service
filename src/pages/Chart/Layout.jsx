@@ -6,6 +6,7 @@ export default function Layout() {
     <div>
       <Link to="./list/pie">Pie 차트</Link>
       <Link to="./list/line">Line 차트</Link>
+      <Link to="./list/line2">Line 차트2</Link>
     </div>
   );
 }

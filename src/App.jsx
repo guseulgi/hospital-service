@@ -14,6 +14,7 @@ import Line from "./pages/Chart/Line";
 import DefaultGrid from "./pages/Grid/DefaultGrid";
 import CustomLineChart from "./rechart/CustomLineChart";
 import GridEx from "./reactdatagrid/GridEx";
+import LineChartEx from "./pages/reactchartjs2/LineChartEx";
 
 function App() {
   useEffect(() => {
@@ -46,6 +47,7 @@ function App() {
           {/* <Route path="/chart/list/pie" element={<Pie />}></Route> */}
           {/* <Route path="/chart/list/line" element={<Line />}></Route> */}
           <Route path="/chart/list/line" element={<CustomLineChart />}></Route>
+          <Route path="/chart/list/line2" element={<LineChartEx />}></Route>
         </Route>
 
         <Route path="/grid" element={<GridMain />}>
