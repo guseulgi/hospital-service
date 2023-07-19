@@ -13,7 +13,7 @@ export default function Layout() {
       <Link to="/chart/list" className="flex-1">
         Chart
       </Link>
-      <Link to="/grid/default" className="flex-1">
+      <Link to="/grid" className="flex-1">
         Grid
       </Link>
       <Outlet />
