@@ -17,6 +17,7 @@ import GridEx from "./reactdatagrid/GridEx";
 import LineChartEx from "./pages/reactchartjs2/LineChartEx";
 import "./App.css";
 import { BarChartEx } from "./pages/reactchartjs2/BarChartEx";
+import GridEx2 from "./reactdatagrid/GridEx2";
 
 function App() {
   useEffect(() => {
@@ -55,7 +56,7 @@ function App() {
 
         <Route path="/grid" element={<GridMain />}>
           <Route path="/grid/default" element={<DefaultGrid />}></Route>
-          <Route path="/grid/reactdatagrid" element={<GridEx />}></Route>
+          <Route path="/grid/reactdatagrid" element={<GridEx2 />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />}></Route>
