@@ -3,8 +3,6 @@ import React from "react";
 import ReactDataGrid from "@inovua/reactdatagrid-community";
 import "@inovua/reactdatagrid-community/index.css";
 
-// import flags from "./flags";
-
 const columns = [
   { name: "firstName", defaultFlex: 1, header: "First Name" },
   { name: "lastName", defaultFlex: 1, header: "Last Name" },
@@ -13,7 +11,6 @@ const columns = [
     header: "Country",
     defaultWidth: 100,
     render: ({ value }) => {
-      // return flags[value] ? flags[value] : "unknown";
       return value;
     },
   },

@@ -19,20 +19,26 @@ import "./App.css";
 import { BarChartEx } from "./pages/reactchartjs2/BarChartEx";
 import GridEx2 from "./reactdatagrid/GridEx2";
 import GridFlag from "./reactdatagrid/GridFlag";
+import HospitalInfoGrid from "./pages/Grid/HospitalInfoGrid";
 
 function App() {
+  const [hospitalInfo, setHospitalInfo] = useState();
+
   useEffect(() => {
-    // API 활용 심의 중
     async function fetchData() {
       const basicUrl = "http://apis.data.go.kr/1352000/ODMS_STAT_14";
       const result = await fetch(
         `${basicUrl}/callStat14Api?serviceKey=${
           import.meta.env.VITE_API_KEY
         }&numOfRows=10&pageNo=1&apiType=JSON&year=2019&dvsd=경기`
-      );
-      // console.log(result.body.getReader().then((done, value) => value));
+      )
+        .then((data) => data.json())
+        .then((res) => {
+          console.log(res.items[0]);
+          setHospitalInfo(res.items[0]); // 읽어온 병원 정보를 저장
+        });
     }
-    // fetchData();
+    fetchData();
   }, []);
 
   return (
@@ -59,6 +65,7 @@ function App() {
           <Route path="/grid/default" element={<DefaultGrid />}></Route>
           <Route path="/grid/reactdatagrid" element={<GridEx2 />}></Route>
           <Route path="/grid/flagGrid" element={<GridFlag />}></Route>
+          <Route path="/grid/hospitalInfo" element={<HospitalInfoGrid data={hospitalInfo} />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />}></Route>

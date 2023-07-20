@@ -7,6 +7,7 @@ export default function GridLayout() {
       <Link to="./default">defaults</Link>
       <Link to="./reactdatagrid">reactdatagrid</Link>
       <Link to="./flagGrid">Flag</Link>
+      <Link to="./hospitalInfo">Hospital Info</Link>
     </div>
   );
 }

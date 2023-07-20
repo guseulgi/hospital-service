@@ -47,7 +47,7 @@ const data = [
 export default function CustomLineChart() {
   return (
     <>
-      <h2>심플라인차트!!</h2>
+      <h2>심플라인차트!! recharts</h2>
       <LineChart
         width={500}
         height={300}
