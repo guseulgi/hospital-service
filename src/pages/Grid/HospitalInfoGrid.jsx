@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function HospitalInfoGrid({ data }) {
-  console.log("ddddd", data);
   return (
     <div>
       <h2>
