@@ -23,14 +23,16 @@ import HospitalInfoGrid from "./pages/Grid/HospitalInfoGrid";
 
 function App() {
   const [hospitalInfo, setHospitalInfo] = useState();
+  const location = "경기";
+  const selectYear = "2019";
 
   useEffect(() => {
     async function fetchData() {
       const basicUrl = "http://apis.data.go.kr/1352000/ODMS_STAT_14";
-      const result = await fetch(
+      await fetch(
         `${basicUrl}/callStat14Api?serviceKey=${
           import.meta.env.VITE_API_KEY
-        }&numOfRows=10&pageNo=1&apiType=JSON&year=2019&dvsd=경기`
+        }&numOfRows=10&pageNo=1&apiType=JSON&year=${selectYear}&dvsd=${location}`
       )
         .then((data) => data.json())
         .then((res) => {
