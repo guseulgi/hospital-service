@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "./Layout";
 import Main from "./pages/Main";
 import { Route, Routes } from "react-router-dom";
@@ -22,23 +22,32 @@ import GridFlag from "./reactdatagrid/GridFlag";
 import HospitalInfoGrid from "./pages/Grid/HospitalInfoGrid";
 
 function App() {
-  const [hospitalInfo, setHospitalInfo] = useState();
-  const location = "경기";
+  const hospitalInfoRef = useRef([]);
+  const [hospitalInfo, setHospitalInfo] = useState([]);
+  const location = ["서울", "경기", "강원", "부산", "전남", "경북", "경남", "전북", "충북", "충남"];
+  // const selectYear = ["2014", "2015", "2016", "2017", "2018", "2019"];
   const selectYear = "2019";
 
   useEffect(() => {
     async function fetchData() {
       const basicUrl = "http://apis.data.go.kr/1352000/ODMS_STAT_14";
-      await fetch(
-        `${basicUrl}/callStat14Api?serviceKey=${
-          import.meta.env.VITE_API_KEY
-        }&numOfRows=10&pageNo=1&apiType=JSON&year=${selectYear}&dvsd=${location}`
-      )
-        .then((data) => data.json())
-        .then((res) => {
-          console.log(res.items[0]);
-          setHospitalInfo(res.items[0]); // 읽어온 병원 정보를 저장
-        });
+      for (let i = 0; i < location.length; i++) {
+        await fetch(
+          `${basicUrl}/callStat14Api?serviceKey=${
+            import.meta.env.VITE_API_KEY
+          }&numOfRows=10&pageNo=1&apiType=JSON&year=${selectYear}&dvsd=${location[i]}`
+        )
+          .then((data) => data.json())
+          .then((res) => {
+            // setHospitalInfo([res.items[0]]); // 읽어온 병원 정보를 저장
+            hospitalInfoRef.current.push(res.items[0]);
+          });
+
+        if (i === location.length - 1) {
+          console.log("?");
+          setHospitalInfo(hospitalInfoRef.current);
+        }
+      }
     }
     fetchData();
   }, []);
