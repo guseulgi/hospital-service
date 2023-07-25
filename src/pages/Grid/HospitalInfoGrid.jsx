@@ -41,24 +41,33 @@ export default function HospitalInfoGrid({ data }) {
   //   },
   // ];
   const column = [
-    { field: "년도", width: 100 },
-    { field: "위치", width: 100 },
-    { field: "종합병원", width: 100 },
-    { field: "일반병원", width: 100 },
-    { field: "한의원", width: 100 },
-    { field: "조산원", width: 100 },
-    { field: "특수병원 한센", width: 100 },
-    { field: "치과의원", width: 100 },
-    { field: "치과병원", width: 100 },
-    { field: "의원", width: 100 },
-    { field: "요양병원", width: 100 },
-    { field: "부속의원", width: 100 },
-    { field: "한방병원", width: 100 },
-    { field: "특수병원 결핵", width: 100 },
+    { field: "년도" },
+    { field: "위치" },
+    { field: "종합병원" },
+    { field: "일반병원" },
+    { field: "한의원" },
+    { field: "조산원" },
+    { field: "특수병원 한센" },
+    { field: "치과의원" },
+    { field: "치과병원" },
+    { field: "의원" },
+    { field: "요양병원" },
+    { field: "부속의원" },
+    { field: "한방병원" },
+    { field: "특수병원 결핵" },
   ];
+
+  const defaultColDef = React.useMemo(() => {
+    return {
+      width: 150,
+      sortable: true,
+      filter: true,
+    };
+  }, []);
+
   return (
     <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={rowDataset} columnDefs={column}></AgGridReact>
+      <AgGridReact rowData={rowDataset} columnDefs={column} defaultColDef={defaultColDef}></AgGridReact>
     </div>
   );
 }

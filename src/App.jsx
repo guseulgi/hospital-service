@@ -44,6 +44,7 @@ function App() {
           });
 
         if (i === location.length - 1) {
+          // 정보를 읽어오는 시간이 너무 길음
           console.log("?");
           setHospitalInfo(hospitalInfoRef.current);
         }
