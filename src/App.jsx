@@ -20,6 +20,7 @@ import { BarChartEx } from "./pages/reactchartjs2/BarChartEx";
 import GridEx2 from "./reactdatagrid/GridEx2";
 import GridFlag from "./reactdatagrid/GridFlag";
 import HospitalInfoGrid from "./pages/Grid/HospitalInfoGrid";
+import GridLayoutEx1 from "./pages/LayoutGrid/GridLayoutEx1";
 
 function App() {
   const hospitalInfoRef = useRef([]);
@@ -78,6 +79,10 @@ function App() {
           <Route path="/grid/reactdatagrid" element={<GridEx2 />}></Route>
           <Route path="/grid/flagGrid" element={<GridFlag />}></Route>
           <Route path="/grid/hospitalInfo" element={<HospitalInfoGrid data={hospitalInfo} />}></Route>
+        </Route>
+
+        <Route path="/layout" element={<GridLayoutEx1 />}>
+          {/* <Route path="/layout/default" element={</>}></Routes> */}
         </Route>
 
         <Route path="*" element={<NotFound />}></Route>

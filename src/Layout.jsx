@@ -16,6 +16,9 @@ export default function Layout() {
       <Link to="/grid" className="flex-1">
         Grid
       </Link>
+      <Link to="/layout" className="flex-1">
+        Layout
+      </Link>
       <Outlet />
     </div>
   );
