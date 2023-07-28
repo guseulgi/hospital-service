@@ -21,15 +21,9 @@ export default function GridLayoutEx1() {
 
   return (
     <GridLayout className="layout" layout={layout} cols={4} rowHeight={30} width={800}>
-      <div key="a" style={boxStyle}>
-        {/* <div className="handle" style={handleStyle}></div>a */}
-      </div>
-      <div key="b" style={boxStyle}>
-        {/* <div className="handle" style={handleStyle}></div>b */}
-      </div>
-      <div key="c" style={boxStyle}>
-        {/* <div className="handle" style={handleStyle}></div>c */}
-      </div>
+      <div key="a" style={boxStyle}></div>
+      <div key="b" style={boxStyle}></div>
+      <div key="c" style={boxStyle}></div>
     </GridLayout>
   );
 }

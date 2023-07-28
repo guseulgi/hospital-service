@@ -23,14 +23,7 @@ export default function DefaultGrid() {
   return (
     <div>
       <Link to="../reactdatagrid">예제</Link>
-      <Grid
-        data={data}
-        columns={columns}
-        rowHeight={25}
-        bodyHeight={100}
-        // heightResizable={true}
-        // rowHeaders={["rowNum"]}
-      />
+      <Grid data={data} columns={columns} rowHeight={25} bodyHeight={100} />
     </div>
   );
 }
