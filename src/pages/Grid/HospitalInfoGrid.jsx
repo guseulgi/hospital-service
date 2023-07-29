@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
 export default function HospitalInfoGrid({ data }) {
+  const agGridReactRef = useRef(null);
+  const renderer = (params) => {
+    return (
+      <span>
+        <img src="/code.png" height="30px" />
+        {params.value}
+      </span>
+    );
+  };
+
   const rowDataset = data.map((el) => {
     return {
-      년도: el.year,
+      // 년도: el.year,
       위치: el.dvsd,
       종합병원: el.hsptlGrhsp,
       일반병원: el.hsptlGnrhsp,
@@ -23,8 +33,8 @@ export default function HospitalInfoGrid({ data }) {
     };
   });
   const column = [
-    { field: "년도" },
-    { field: "위치" },
+    // { field: "년도" },
+    { field: "위치", checkboxSelection: true, pinned: "left" },
     { field: "종합병원" },
     { field: "일반병원" },
     { field: "한의원" },
@@ -47,9 +57,27 @@ export default function HospitalInfoGrid({ data }) {
     };
   }, []);
 
+  const clickTable = () => {
+    if (agGridReactRef.current) {
+      const selectedNodes = agGridReactRef.current.api.getSelectedNodes();
+      const selectedData = selectedNodes.map((node) => node.data);
+      console.log(selectedData);
+    }
+  };
+
   return (
     <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={rowDataset} columnDefs={column} defaultColDef={defaultColDef}></AgGridReact>
+      <AgGridReact
+        ref={agGridReactRef}
+        rowData={rowDataset}
+        columnDefs={column}
+        defaultColDef={defaultColDef}
+        rowSelection="multiple"
+        animateRows="ture"
+      ></AgGridReact>
+      <div>
+        <button onClick={clickTable}>클릭</button>
+      </div>
     </div>
   );
 }
