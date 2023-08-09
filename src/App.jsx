@@ -40,13 +40,11 @@ function App() {
         )
           .then((data) => data.json())
           .then((res) => {
-            // setHospitalInfo([res.items[0]]); // 읽어온 병원 정보를 저장
             hospitalInfoRef.current.push(res.items[0]);
           });
 
         if (i === location.length - 1) {
           // 정보를 읽어오는 시간이 너무 길음
-          console.log("?");
           setHospitalInfo(hospitalInfoRef.current);
         }
       }
@@ -67,8 +65,6 @@ function App() {
 
         <Route path="/chart" element={<ChartMain />}>
           <Route path="/chart/list" element={<ChartList />}></Route>
-          {/* <Route path="/chart/list/pie" element={<Pie />}></Route> */}
-          {/* <Route path="/chart/list/line" element={<Line />}></Route> */}
           <Route path="/chart/list/line" element={<CustomLineChart />}></Route>
           <Route path="/chart/list/line2" element={<LineChartEx />}></Route>
           <Route path="/chart/list/bar" element={<BarChartEx />}></Route>
@@ -81,9 +77,7 @@ function App() {
           <Route path="/grid/hospitalInfo" element={<HospitalInfoGrid data={hospitalInfo} />}></Route>
         </Route>
 
-        <Route path="/layout" element={<GridLayoutEx1 />}>
-          {/* <Route path="/layout/default" element={</>}></Routes> */}
-        </Route>
+        <Route path="/layout" element={<GridLayoutEx1 />}></Route>
 
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
