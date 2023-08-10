@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import Layout from "./Layout";
-import Main from "./pages/Main";
 import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+
+import Main from "./pages/Main";
 import Write from "./pages/Post/Write";
 import NotFound from "./pages/NotFound";
 import PostList from "./pages/Post/List";
@@ -9,13 +10,9 @@ import ChartList from "./pages/Chart/List";
 import PostMain from "./pages/Post/index";
 import ChartMain from "./pages/Chart/index";
 import GridMain from "./pages/Grid/index";
-import Pie from "./pages/Chart/Pie";
-import Line from "./pages/Chart/Line";
 import DefaultGrid from "./pages/Grid/DefaultGrid";
 import CustomLineChart from "./rechart/CustomLineChart";
-import GridEx from "./reactdatagrid/GridEx";
 import LineChartEx from "./pages/reactchartjs2/LineChartEx";
-import "./App.css";
 import { BarChartEx } from "./pages/reactchartjs2/BarChartEx";
 import GridEx2 from "./reactdatagrid/GridEx2";
 import GridFlag from "./reactdatagrid/GridFlag";
